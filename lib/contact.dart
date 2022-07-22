@@ -22,15 +22,20 @@ class _ContactPageState extends State<ContactPage> {
           children: [
             Text("My Name is ${names[i]}",style: TextStyle(fontSize: 20)),
             ElevatedButton(onPressed: (){
-              setState(() {
-                i++;
-              });
+              if(i<names.length - 1){
+                setState(() {
+                  i++;
+                });
+              }
+
             }, child: Text("Next")),
             SizedBox(height: 10),
             ElevatedButton(onPressed: (){
-              setState(() {
-                i--;
-              });
+              if(i != 0 ){
+                setState(() {
+                  i--;
+                });
+              }
             }, child: Text("Go Back"))
           ],
         ),
